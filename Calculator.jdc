@@ -1,0 +1,47 @@
+// Calculator
+
+// What I don't understand about this is why the {switch - case} statement has to be right next to int choice = ReadInt().
+// I don't get a compilation error if that happens but the program throws an exception
+
+println ("Please enter the first operand");
+String num1 = readLine();
+double d1 = Double.parseDouble(num1);
+
+println ("Please enter the second operand");
+String num2 = readLine();
+double d2 = Double.parseDouble(num2);
+
+double answer = 0;
+
+println ("Please choose which calculator operation you would like to perform:");
+println ("For addition please enter 1"); 
+println ("For subtraction please enter 2");
+println ("For multiplication please enter 3");
+println ("For division please enter 4");
+int choice = readInt();
+
+switch (choice) {
+case 1:
+// Addition
+	answer = d1+d2;
+   	break;
+ case 2:
+// Subtraction
+	answer = d1-d2;
+	break;
+ case 3:
+// Multiplication
+	answer = d1*d2;
+   	break;
+ case 4:
+// Division
+	answer = d1/d2;
+   	break;
+ default:
+	println ("Error - you must enter an option 1, 2, 3 or 4");
+	break; 
+}
+
+println (answer);
+
+
