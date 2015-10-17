@@ -5,14 +5,14 @@
 // Now modify your program to write each word (as defined by spaces) rather than letter on a different line.
 
 
-println("Please enter a sentence of text")
-String str = nextLine()
+println("Please enter a sentence of text");
+String str = readLine();
+int j = str.length(); //define an integer j where j is the length of the string
 
-int j = str.length() //define an integer j where j is the length of the string
-
-int i
-for (i = 0, i=j, i++) {
-	println str.charAt(i)
+int i;
+for (i = 0; i<j; i++) {
+	char c = str.charAt(i);
+	println(c);
 }
 	
 
