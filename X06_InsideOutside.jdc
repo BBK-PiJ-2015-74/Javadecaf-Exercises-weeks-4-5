@@ -1,0 +1,45 @@
+//InsideOutside
+
+//Write a program that reads the coordinates of the two points defining a rectangle and then the coordinates of a third point. 
+//The program must then determine whether the point falls inside or outside the rectangle.
+
+Rectangle myRectangle = new Rectangle();
+myRectangle.upLeft = new Point();
+myRectangle.downRight = new Point();
+
+println("Give the x of the first point (up left): "); // if Groovy add String s = System.console().readLine()
+myRectangle.upLeft.x = readDouble();  // if Groovy add myRectangle.upLeft.x = Double.parseDouble(s) 
+println("Give the y of the first point (up left): ");
+myRectangle.upLeft.y = readDouble();
+
+println("Give the x of the second point (down right): ");
+myRectangle.downRight.x = readDouble();
+println("Give the y of the first point (down right): ");
+myRectangle.downRight.y = readDouble();
+
+Point point3 = new Point();
+println("Give the x of the third point alone: ");
+point3.x = readDouble(); 
+println("Give the y of the third point alone: ");
+point3.y = readDouble();
+
+// Now calculate whether the point is inside the rectangle
+
+if ((point3.x >= myRectangle.upLeft.x) && (point3.x <= myRectangle.downRight.x) && (point3.y <= myRectangle.upLeft.y) && (point3.y >= myRectangle.downRight.y)) {
+		println ("The point is INSIDE the rectangle");		
+	} else {
+	println ("The point is OUTSIDE the rectangle");
+} 
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
+
+class Point {
+	double x;
+	double y;
+}
+
+
+
