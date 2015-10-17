@@ -1,0 +1,36 @@
+// Rectangle 
+
+Rectangle myRectangle = new Rectangle();
+myRectangle.upLeft = new Point();
+myRectangle.downRight = new Point();
+
+println("Give the x of the first point: "); // if Groovy add String s = System.console().readLine()
+myRectangle.upLeft.x = readDouble();  // if Groovy add myRectangle.upLeft.x = Double.parseDouble(s) 
+println("Give the y of the first point: ");
+myRectangle.upLeft.y = readDouble();
+
+println("Give the x of the second point: ");
+myRectangle.downRight.x = readDouble();
+println("Give the y of the first point: ");
+myRectangle.downRight.y = readDouble();
+
+double height = (myRectangle.downRight.y - myRectangle.upLeft.y);
+double width = (myRectangle.downRight.x - myRectangle.upLeft.x);
+double perimeter = 2*(width + height);
+double area = width*height;
+
+println("The perimeter is " + perimeter + " and the area is " + area + ".");
+
+class Rectangle {
+	Point upLeft;
+	Point downRight;
+}
+
+class Point {
+	double x;
+	double y;
+}
+
+
+
+// have defined data types (do this first), now get co-ordinates from the user
