@@ -1,0 +1,80 @@
+//Overlaps
+
+// Write a program that reads the coordinates of four points, the former two defining one rectangle 
+// and the latter two defining another one. The program must read the coordinates of a fifth point 
+// and say whether the point is inside both rectangles, inside one of them only, or out of both.
+
+Rectangle firstRectangle = new Rectangle();
+firstRectangle.downLeft = new Point();
+firstRectangle.upRight = new Point();
+
+println("First enter the co-ordinates of the first rectangle.")
+
+println("Give the x of the first point (down left): "); 
+firstRectangle.downLeft.x = readDouble(); 
+println("Give the y of the first point (down left): ");
+firstRectangle.downLeft.y = readDouble();
+
+println("Give the x of the second point (up right): ");
+firstRectangle.upRight.x = readDouble();
+println("Give the y of the first point (up right): ");
+firstRectangle.upRight.y = readDouble();
+
+Rectangle secondRectangle = new Rectangle();
+secondRectangle.downLeft = new Point();
+secondRectangle.upRight = new Point();
+
+println("Secondly enter the co-ordinates of the second rectangle.")
+
+println("Give the x of the first point (down left): "); 
+secondRectangle.downLeft.x = readDouble(); 
+println("Give the y of the first point (down left): ");
+secondRectangle.downLeft.y = readDouble();
+
+println("Give the x of the second point (up right): ");
+secondRectangle.upRight.x = readDouble();
+println("Give the y of the first point (up right): ");
+secondRectangle.upRight.y = readDouble();
+
+Point point5 = new Point();
+println("Give the x of the fifth point alone: ");
+point5.x = readDouble(); 
+println("Give the y of the fifth point alone: ");
+point5.y = readDouble();
+
+// Now calculate whether the point is inside firstRectangle, inside secondRectangle, inside both or outside both
+
+boolean insidefirstrectangle = true
+boolean insidesecondrectangle = true
+
+if ((point5.x >= firstRectangle.downLeft.x) && (point5.x <= firstRectangle.upRight.x) && (point5.y <= firstRectangle.downLeft.y) && (point5.y >= firstRectangle.upRight.y)) {
+		println ("The point is INSIDE the first rectangle");		
+	} else {
+	println ("The point is OUTSIDE the first rectangle");
+	boolean insidefirstrectangle = false
+} 
+
+if ((point5.x >= secondRectangle.downLeft.x) && (point5.x <= secondRectangle.upRight.x) && (point5.y <= secondRectangle.downLeft.y) && (point5.y >= secondRectangle.upRight.y)) {
+		println ("The point is INSIDE the second rectangle");		
+	} else {
+	println ("The point is OUTSIDE the second rectangle");
+	boolean insidesecondrectangle = false
+} 
+
+if (insidefirstrectangle && insidesecondrectangle) {
+println ("The point is inside both rectangles");
+} else {
+println ("The point is OUTSIDE both rectangles");
+
+class Rectangle {
+	Point downLeft;
+	Point upRight;
+}
+
+class Point {
+	double x;
+	double y;
+}
+
+
+
