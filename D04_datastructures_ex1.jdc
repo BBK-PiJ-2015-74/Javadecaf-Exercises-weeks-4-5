@@ -1,0 +1,38 @@
+// Ex 1 stack and heap diagrams
+
+
+Car myOldFord = new Car(); 
+myOldFord.model = "Ford Ka"; 
+myOldFord.price = 2000; 
+Car fancyRacer = new Car(); 
+fancyRacer.model = "911"; 
+fancyRacer.price = 300000; 
+int myBudget = 10000;					// Point 2
+
+println("Lets exchange cars! Deal?"); 
+trade(fancyRacer, myOldFord, myBudget); // Point 3
+
+println("After the exchange, the new car is" + myOldFord.model);
+println ("After the exchange, the old car is" + fancyRacer.model);
+
+println("The old car has become " + fancyRacer.model); 
+println("And the new car has become " + myOldFord.model); 
+trade(fancyRacer, myOldFord, myBudget); 
+    
+void trade (Car newCar, Car oldCar, int myFund) { 
+	if (newCar.price <= oldCar.price + myFund) {
+		println("we have a deal"); 
+		} else {
+		println("forget about it..."); 
+	}
+println("Now we try to be naughty"); 
+Car temp = new Car();
+temp = newCar;
+newCar = oldCar;
+oldCar = temp;
+}										// Point 1
+
+class Car {
+    String model;
+    double price;
+}
