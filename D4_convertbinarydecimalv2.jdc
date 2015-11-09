@@ -1,0 +1,104 @@
+// Ex 3 day 4 - Methods. Converting binary to decimal and vice-versa
+
+//power(int, int): Takes a base b and an exponent e from the user, and returns the result of be.
+//power2(int): Takes an exponent e from the user and returns the result of 2e. This method must call the previous one to find out the result.
+
+
+// Define method power (see powerresult.jdc for unit test)
+
+
+				
+
+// Switch-choice statement goes here, which calls correct method depending on the choice
+
+println ("Please choose which operation you would like to perform:");
+println ("For Binary to Decimal please enter 1"); 
+println ("For Decimal to Binary please enter 2");
+int choice = readInt();
+
+switch (choice) {
+case 1:
+// Binary to Decimal
+	println ("Please enter a binary number");
+	String myBinary = readLine();
+	binary2decimal(myBinary);
+   	break;
+ case 2:
+// Decimal to Binary
+	println ("Please enter a decimal number");
+	int myDecimal = readLine();
+	decimal2binary(myDecimal);
+	break;
+default:
+// default error message
+	println ("Something has gone wrong!");
+	break;
+	
+
+public int power(int base, int exponent){ 			
+	int base = 0;
+	int exponent = 0;
+	int powerResult = 1;						//should powerResult just be power?
+	int j=0;
+	
+	if (exponent !=0) {							// calculation below only works if exp !=0
+	 	for (j=0; j<exponent; j++) {
+		powerResult = (powerResult * base);
+		println(powerResult); 					//power returns base ^ exponent (as int) - powerResult is the output of method powerMethod
+	} else {
+		powerResult = 1							//powerResult = 1 if exp = 0
+	}											
+	return power;								// is this return statement correct?
+} 				
+
+// Define method power2
+
+int power2 (int exponent) {
+	int power2Result = 0;					// should this power2Result just be power2?
+	power2Result = power(2, exponent);			
+	println(power2Result);
+	return power2;
+	}
+
+// Define method binary2decimal(String) - takes a string binary as input and returns a decimal int
+
+int binary2decimal(String binarystr) {
+	
+	int binaryLeng = binarystr.length(); 										
+	int pos = 0;
+	int binaryDigit = 0;
+	
+	for (pos = (binaryLeng-1); pos >=0; pos--) {
+	char bin = binarystr.charAt(pos);				//char c = str.charAt(0)
+	binaryDigit = Character.getNumericValue(bin);   //binaryDigit = 0 or 1. At this point I have a string of 0s or 1s in the right order to do the decimal computation
+	}												// e.g. if I had 1010 I now have 0, 1, 0, 1
+
+	int decimalout = 0;
+
+	for (pos = 0; pos > binaryLeng-1; pos++) {
+	decimalout = decimalout + power2(pos);
+	}
+	return binary2decimal;
+}	
+	
+// Define method decimal2binary(int) - takes a decimal integer and returns a string binary - requires an integer parameter
+
+String decimal2binary (int decimal) {
+	
+	int binaryquotient = 0;
+	int binaryremainder = 0;
+	decimal = binaryquotient;
+	int k;
+	
+	for (k=0; binaryquotient >=2; k++) {
+		binaryquotient = binaryquotient /2;      //because it's defined as an int it will only remember the nearest whole number
+		binaryremainder = binaryquotient %2;
+		String binarydigit = Integer.toString(binaryremainder);
+		String binaryresult = binaryresult + binarydigit;
+	}	
+	return decimal2binary;	
+}	
+
+
+
+

@@ -1,0 +1,44 @@
+//Factorial - Recursion exercise 2.1
+
+// Write a program which calculates a factorial of a number both iteratively and recursively:
+
+// n! = n × (n − 1) × (n − 2) × . . . × 2 × 1 e.g. 4! = 4 * 3 * 2 * 1 = 24
+
+
+
+int z = 10;
+
+getFactorialI(z);
+println(getFactorialI(z));
+
+getFactorialR(z);
+println(getFactorialR(z));
+
+// iteratively first:
+
+int getFactorialI(int n) {
+	int k = 0;
+	int result = 1;
+	for (k=0; (n-k)>=1; k++) {
+		result = result*(n-k);
+	}
+return result;
+}	
+		
+// and now the recursive version
+
+int getFactorialR(int n) { 
+	if(n == 1){
+		return 1; 
+	} else {
+		int result = n * getFactorialR(n-1);
+		return result;
+	} 
+}
+		
+		
+	
+		
+		
+	
+

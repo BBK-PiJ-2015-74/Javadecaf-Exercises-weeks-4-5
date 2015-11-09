@@ -1,0 +1,34 @@
+// Recursion - first exercise
+
+
+printNumbers(6);
+
+void printNumbers (int n) {
+	if (n<=0) {
+	 return;
+	}
+	println(n);					//n =6
+	printNumbers(n-2);			//n=4, back to line 6. prints 4, then 2. Back to line 6. Prints 2. Then n-2 is <=0, so it returns
+	printNumbers(n-3);			
+	println(n);				
+}
+
+// Output will be:
+// 6, 4, 2, 2, 
+
+Input is 6
+Line 6 - 6 is input
+Line 10 - 6
+Line 11 - go back to beginning
+Line 6 - 6-2 = 4
+Line 11, go back to beginning, n is 4, so n-2 = 2
+Line 6 n = 2
+Line 10 prints 2
+Line 11 go back to line 6, n = 2
+Line 10 prints 2 
+Line 11 n-2 = 0, go back to line 6
+Line 6, n is 0 so return - return to the point straight after which the method was called
+
+
+	
+	 

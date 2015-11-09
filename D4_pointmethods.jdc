@@ -1,0 +1,64 @@
+// Day 4 Exercise 5 more on points
+
+// work out a program which defines a class Point (x,y) and defines a method distanceTo(Point)
+// which calculates the distance to another point
+
+Point mypoint1 = new Point();
+println("Give the x of the first point: ");
+mypoint1.x = readDouble(); 
+println("Give the y of the first point: ");
+mypoint1.y = readDouble();
+
+Point mypoint2 = new Point();
+println("Give the x of the second point: ");
+mypoint2.x = readDouble(); 
+println("Give the y of the second point: ");
+mypoint2.y = readDouble();
+
+distanceTo(mypoint2);
+
+println("The distance to point 2 from current location is:") + distanceBetween(mypoint1, mypoint2);
+
+// Define method distanceTo(Point point) (output is a double)
+
+double distanceTo(Point mypoint) { 			//This assumes we are already at point1 and the co-ordinates of point1 are known
+	Point point1 = new Point();
+	Point point2 = new Point();	
+	double distanceTo = 0; 					// Distance between two points, point 1 and point 2
+	distanceTo =  Math.pow((Math.pow(point1.x-point2.x),2) + Math.pow(point1.y-point2.y),2), 0.5);
+	return distanceTo;						// Do we need a return statement, or does distanceTo by definition return a double called distanceBetween?
+}
+
+// Define method distanceToOrigin()
+
+double distanceToOrigin() {
+	Point origin = new Point();
+	origin.x = 0;
+	origin.y = 0;
+	double distanceToOrigin = 0;
+	distanceToOrigin = distanceTo(origin);
+	
+// Define method moveTo(double x, double y): changes the coordinates of this point to be the given parameters x and y.
+
+Point moveTo(double x, double y) {
+	this.x = x;
+	this.y = y;
+}
+
+// Define method moveTo(Point): changes the coordinates of this point to move where the given point is.
+
+Point moveTo(Point) {
+	Point point = new Point();
+	this.point = Point;
+}
+
+// Define method clone(): returns a copy of the current point with the same coordinates.
+
+TO DO FROM HERE 
+
+
+class Point {
+	double x;
+	double y;
+}
+

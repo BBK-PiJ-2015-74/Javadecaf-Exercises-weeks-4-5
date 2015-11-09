@@ -1,0 +1,18 @@
+
+int base = 0;
+int exponent = 0;
+
+println("please enter base");
+base = readInt();
+println(base);
+println("please enter exponent");
+exponent = readInt();
+println(exponent);
+
+int powerresult = 1;
+int j=0;
+	
+	for (j=0; j<exponent; j++) {
+	powerresult = (powerresult * base);
+	println(powerresult); 				
+	} 				

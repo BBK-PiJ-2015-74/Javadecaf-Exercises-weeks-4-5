@@ -1,0 +1,13 @@
+println ("Please enter a binary number");
+String myBinary = readLine();
+int binaryLength = myBinary.length(); 										
+
+int binaryPosition =0;
+int binaryDigit =0;
+for (binaryPosition = (binaryLength-1); binaryPosition >=0; binaryPosition--){
+	char bin = myBinary.charAt(binaryPosition);				//char c = str.charAt(0)
+	println(bin);
+	int j = Character.getNumericValue(bin);
+}
+
+

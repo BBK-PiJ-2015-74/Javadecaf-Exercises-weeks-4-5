@@ -26,22 +26,21 @@ println(getFibR(z));
 // iteratively first:
 
 int getFibI(int n) {
+	int result = 0;
 	if (n == 1) {
 		return 1;
-	} else if (n == 2) {
-		return 1;
-	} else {  
-		int k = 3;
-		int last = 1;
-		int next_to_last = 1;
-		int result = -1;
-			for (k=3; k==n; k++) {	
-				result = last + next_to_last; 			
-				last = result;								
-				next_to_last = last;						
-			}
-		return result;
 	}
+	if (n == 2) {
+		return 1;
+	}  
+	int last = 1;
+	int next_to_last = 1;
+		for (int k=3; k<=n; k++) {	
+			result = last + next_to_last; 
+			next_to_last = last;		
+			last = result;															
+		}
+		return result;
 }
 	
 			
